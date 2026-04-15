@@ -1,0 +1,7 @@
+[project]
+name = "amazon-review-analyzer"
+version = "0.1.0"
+description = "Classify Amazon reviews as real or fake using machine learning."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
