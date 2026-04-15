@@ -76,3 +76,7 @@ After installation, restart your terminal so the `uv` command is available.
 2. Use the scripts in `src/` to preprocess data, train the model, and evaluate results.
 3. Trained model artifacts will be saved to the `model/` directory.
 4. Launch the web application from `webapp/` to interact with the model through a browser.
+
+## Responsible AI Use
+
+I used GitHub Copilot to help draft and scaffold parts of this project. I am the one responsible for reviewing, testing, and revising any AI-generated output before treating it as a final product. AI assistance is primarily used to accelerate development, but is not used to replace my own judgment.
