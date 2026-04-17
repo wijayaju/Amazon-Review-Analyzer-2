@@ -73,9 +73,22 @@ After installation, restart your terminal so the `uv` command is available.
 ## Usage
 
 1. Place your review data file in the `data/` directory.
-2. Use the scripts in `src/` to preprocess data, train the model, and evaluate results.
-3. Trained model artifacts will be saved to the `model/` directory.
-4. Launch the web application from `webapp/` to interact with the model through a browser.
+2. Run preprocessing with an explicit input file path:
+
+   ```bash
+   uv run python src/preprocess.py --input "data/<INPUT_CSV_PATH>.csv"
+   ```
+
+   Example:
+
+   ```bash
+   uv run python src/preprocess.py --input "data/fake-reviews.csv"
+   ```
+
+   Output is written to `data/preprocessed_reviews.csv`.
+3. Use the scripts in `src/` to train the model and evaluate results.
+4. Trained model artifacts will be saved to the `model/` directory.
+5. Launch the web application from `webapp/` to interact with the model through a browser.
 
 ## Responsible AI Use
 
