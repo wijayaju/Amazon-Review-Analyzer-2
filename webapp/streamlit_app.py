@@ -7,8 +7,6 @@ from typing import Any
 import joblib
 import pandas as pd
 import streamlit as st
-from peft import PeftConfig, PeftModel
-from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
 if str(ROOT_DIR) not in sys.path:
@@ -71,6 +69,9 @@ def load_xgboost_model() -> tuple[Any, list[str]]:
 def load_bert_model() -> tuple[Any, Any]:
     if not BERT_MODEL_PATH.exists():
         raise FileNotFoundError(f"Missing BERT LoRA directory at {BERT_MODEL_PATH}")
+
+    from peft import PeftConfig, PeftModel
+    from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
     peft_config = PeftConfig.from_pretrained(str(BERT_MODEL_PATH))
     tokenizer = AutoTokenizer.from_pretrained(str(BERT_MODEL_PATH))
