@@ -4,4 +4,16 @@ version = "0.1.0"
 description = "Classify Amazon reviews as real or fake using machine learning."
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+	"accelerate>=1.1.1",
+	"datasets>=3.1.0",
+	"joblib>=1.4.2",
+	"matplotlib>=3.10.0",
+	"pandas>=2.2.3",
+	"peft>=0.13.2",
+	"scikit-learn>=1.5.2",
+	"streamlit>=1.44.0",
+	"torch>=2.5.1",
+	"transformers>=4.46.3",
+	"xgboost>=2.1.3",
+]
