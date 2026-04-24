@@ -1,0 +1,20 @@
+- v0.1.0: Create preprocessing script
+    - generated Python script to create CSV of data with cleaned text
+    - prompted to add more features such as word count, punctuation count, character length, etc.
+    - validated by referring to output from AI Club's Amazon Review Analyzer code
+- v0.2.0: Create training script
+    - generated Python script to train XGBoost model
+    - prompted to include classification report, confusion matrix, and auc score as well as output metadata and feature names
+    - validated by referring to output from AI Club's Amazon Review Analyzer code
+- v0.3.0: Create tuning script
+    - generated Python script to fine-tune XGBoost model
+    - prompted to include reg alpha and reg lambda in param grid, automatically select best threshold, and save model metadata and fine-tuned model and selected features
+    - validated by referring to output from AI Club's Amazon Review Analyzer code
+- v0.4.0: Add baseline and BERT models
+    - generated python scripts to create and train the models
+    - prompted to include pytorch for bert script
+    - validated by referring to AI Club's baseline and BERT model implementation code
+- v1.0.0: add Streamlit UI, finalizing project
+    - generated streamlit app file to implement an interactive UI to use the models with
+    - prompted to troubleshoot errors that popped up (wrong file paths, wrong arguments used), make the UI reactive (to avoid having to click submit everytime a change is made), and add a display for features extracted
+    - validated by reviewing output for errors and viewing AI Club's Amazon Review Analyzer Streamlit implementation code
