@@ -90,6 +90,16 @@ After installation, restart your terminal so the `uv` command is available.
 4. Trained model artifacts will be saved to the `model/` directory.
 5. Launch the web application from `webapp/` to interact with the model through a browser.
 
+### Run the Streamlit App
+
+Start an interactive UI where you can paste a review and choose a model (`baseline`, `xgboost`, or `bert`) for instant classification:
+
+```bash
+uv run streamlit run webapp/streamlit_app.py
+```
+
+The app predicts whether the review is **AI-generated** or **human-written** and displays model confidence.
+
 ## Responsible AI Use
 
 I used GitHub Copilot to help draft and scaffold parts of this project. I am the one responsible for reviewing, testing, and revising any AI-generated output before treating it as a final product. AI assistance is primarily used to accelerate development, but is not used to replace my own judgment.
