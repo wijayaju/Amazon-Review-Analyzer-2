@@ -207,32 +207,29 @@ def main() -> None:
         height=200,
     )
 
-    submitted = st.button("Classify Review", type="primary", use_container_width=True)
+    if not review_text.strip():
+        st.info("Enter a review to run live classification.")
+        return
 
-    if submitted:
-        if not review_text.strip():
-            st.warning("Please enter review text before running prediction.")
-            return
+    try:
+        if model_choice == "baseline":
+            result = predict_with_baseline(review_text)
+        elif model_choice == "xgboost":
+            result = predict_with_xgboost(review_text, rating)
+        else:
+            result = predict_with_bert(review_text)
 
-        try:
-            if model_choice == "baseline":
-                result = predict_with_baseline(review_text)
-            elif model_choice == "xgboost":
-                result = predict_with_xgboost(review_text, rating)
-            else:
-                result = predict_with_bert(review_text)
-
-            render_prediction(result, model_choice)
-            render_feature_analysis(review_text, rating)
-        except FileNotFoundError as error:
-            st.error(str(error))
-            st.info(
-                "Model artifact not found. Train that model first, then rerun the app. "
-                "Expected locations are model/baseline_tfidf_logreg.joblib, "
-                "model/xgboost_review_model.joblib, and model/bert_lora/."
-            )
-        except Exception as error:  # noqa: BLE001
-            st.exception(error)
+        render_prediction(result, model_choice)
+        render_feature_analysis(review_text, rating)
+    except FileNotFoundError as error:
+        st.error(str(error))
+        st.info(
+            "Model artifact not found. Train that model first, then rerun the app. "
+            "Expected locations are model/baseline_tfidf_logreg.joblib, "
+            "model/xgboost_review_model.joblib, and model/bert_lora/."
+        )
+    except Exception as error:  # noqa: BLE001
+        st.exception(error)
 
 
 if __name__ == "__main__":
